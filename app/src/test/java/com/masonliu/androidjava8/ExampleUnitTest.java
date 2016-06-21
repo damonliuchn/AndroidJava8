@@ -12,4 +12,14 @@ public class ExampleUnitTest {
     public void testStream() throws Exception {
         TestStream.test();
     }
+
+    @Test
+    public void testLamda() throws Exception {
+        TestLamda.test();
+    }
+
+    @Test
+    public void testNewInterface() throws Exception {
+        TestNewInterface.test();
+    }
 }

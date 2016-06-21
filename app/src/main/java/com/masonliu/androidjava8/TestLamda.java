@@ -1,29 +1,27 @@
 package com.masonliu.androidjava8;
 
-import android.util.Log;
-
 /**
  * Created by liumeng on 16/6/21.
  */
 public class TestLamda {
-    public static void aaa(Runnable2 runnable2) {
-        runnable2.run2();
+    public static void setRunnable(Runnable runnable) {
+        runnable.run();
     }
 
     public static void test() {
-        aaa(new Runnable2() {
+        setRunnable(new Runnable() {
             @Override
-            public void run2() {
-
+            public void run() {
+                System.out.println("i am not lamda");
             }
         });
-        aaa(() -> {
-            Log.d("dd", "dd");
+        setRunnable(() -> {
+            System.out.println("i am lamda");
         });
     }
 
     @FunctionalInterface
-    interface Runnable2 {
-        void run2();
+    interface Runnable {
+        void run();
     }
 }
