@@ -1,48 +1,25 @@
 package com.masonliu.androidjava8;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//Lambda表达式
-//        函数式接口
-//        流API
-//        默认方法
-
-
-//        新的Date
-//        Time API
-
-
 //    Android Gingebread (API 9)及以上:
 //        Lambda 表达式
-//        java.util.function
-
+//        java.util.function 函数式接口
 //    Android N（API 24）及以上:
 //        默认和静态interface方法
 //        可重复的注解
 //        流(Streams)
-//        反射APIs
+//        Java 8 对 IO/NIO 也做了一些改进
+//        支持新的 Unicode 6.2.0 标准，新增了日历和本地化的 API，改进了日期时间的管理等
 
-
-//interface XX {
-//    default void testing(Context context) {
-//        Toast.makeText(context, "show java8 demo", Toast.LENGTH_LONG).show();
-//    }
-//}
 
 //    javac:
 //        javac (.java --> .class) --> dx (.class --> .dex)
 //    Jack:
 //        Jack (.java --> .jack --> .dex)
-
-
-@FunctionalInterface
-interface Runnable {
-    public abstract void run();
-}
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView text = (TextView) findViewById(R.id.text);
-        text.setOnClickListener(
-                v -> Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_LONG).show()
-        );
+        text.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_LONG).show());
     }
 }

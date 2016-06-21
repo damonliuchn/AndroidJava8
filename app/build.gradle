@@ -6,11 +6,11 @@ android {
     buildToolsVersion '24'
     defaultConfig {
         applicationId "com.masonliu.androidjava8"
-        minSdkVersion 14
+        minSdkVersion 24
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
-        jackOptions{
+        jackOptions {
             enabled true   //启用jack编译器
         }
     }
@@ -30,8 +30,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
-//    testCompile 'junit:junit:4.12'
-//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-//    androidTestCompile 'com.android.support.test:runner:0.5'
-//    androidTestCompile 'com.android.support:support-annotations:23.2.1'
+    testCompile 'junit:junit:4.12'
 }
