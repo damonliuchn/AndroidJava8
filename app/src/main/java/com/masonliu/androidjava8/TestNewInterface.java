@@ -20,4 +20,17 @@ public class TestNewInterface {
 
         void run();
     }
+
+    class A implements NewInterface {
+        public void testing() {
+            //super.testing(); 这样不行
+            NewInterface.super.testing();
+            System.out.println("i am staticMethon");
+        }
+
+        @Override
+        public void run() {
+
+        }
+    }
 }
