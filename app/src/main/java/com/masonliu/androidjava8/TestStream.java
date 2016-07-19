@@ -72,14 +72,14 @@ public class TestStream {
          Short-circuiting：
          anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit
          */
-        //清单 7. 转换大写
+        //清单 7. 转换大写-map
         Stream<String> stream2 = Stream.of("a", "b", "c");
         List<String> output = stream2.
                 map(String::toUpperCase).
                 collect(Collectors.toList());
         System.out.println("map(String::toUpperCase):");
         output.stream().forEach(System.out::println);
-        //清单 8. 平方数
+        //清单 8. 平方数-map
         List<Integer> nums = Arrays.asList(1, 2, 3, 4);
         List<Integer> squareNums = nums.stream().
                 map(n -> n * n).
@@ -87,7 +87,7 @@ public class TestStream {
         System.out.println("SquareNums:");
         squareNums.stream().forEach(System.out::println);
 
-        //清单 9. 一对多
+        //清单 9. 一对多-flatmap
         System.out.println("清单 9. 一对多");
         Stream<List<Integer>> inputStream = Stream.of(
                 Arrays.asList(1),
@@ -97,13 +97,13 @@ public class TestStream {
         Stream<Integer> outputStream = inputStream.
                 flatMap((childList) -> childList.stream());//把stream合并
         outputStream.forEach(System.out::println);
-        //清单 10. 留下偶数
+        //清单 10. 留下偶数-filter
         System.out.println("清单 10. 留下偶数");
         Integer[] evens = Stream.of(1, 2, 3, 4, 5, 6).
                 filter(n -> n % 2 == 0).
                 toArray(Integer[]::new);
         Arrays.stream(evens).forEach(System.out::println);
-        //清单 11. 把单词挑出来
+        //清单 11. 把单词挑出来-flatmap
         System.out.println("清单 11. 把单词挑出来");
         List<String> output2 = Stream.of("Hello world", "i am ok").
                 flatMap(line -> Arrays.stream(line.split(" "))).
@@ -111,5 +111,20 @@ public class TestStream {
                 collect(Collectors.toList());
         output2.forEach(System.out::println);
 
+        /**
+         * 清单 12 forEach
+        forEach 是 terminal 操作，因此它执行后，Stream 的元素就被“消费”掉了，你无法对一个 Stream 进行两次 terminal 运算。下面的代码是错误的：
+        stream.forEach(element -> doOneThing(element));
+        stream.forEach(element -> doAnotherThing(element));
+        相反，具有相似功能的 intermediate 操作 peek 可以达到上述目的。如下是出现在该 api javadoc 上的一个示例。
+        清单 13. peek 对每个元素执行操作并返回一个新的 Stream
+        */
+         Stream.of("one", "two", "three", "four")
+                .filter(e -> e.length() > 3)
+                 .peek(e -> System.out.println("Filtered value: " + e))
+                .map(String::toUpperCase)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .collect(Collectors.toList());
+        //forEach 不能修改自己包含的本地变量值，也不能用 break/return 之类的关键字提前结束循环。
     }
 }

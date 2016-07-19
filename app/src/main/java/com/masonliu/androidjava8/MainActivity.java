@@ -4,10 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
+//Android Studio升级到2.2（canary channel）
+//gradle插件使用2.2.0及以上
+//jackOptions {
+//        enabled true   //启用jack编译器
+//}
+//buildToolsVersion 23以及以前的编译工具版本中的jack是不支持java8的
+
 
 //    Android Gingebread (API 9)及以上:
 //        Lambda 表达式
 //        java.util.function 函数式接口
+//        方法引用
 //    Android N（API 24）及以上:
 //        默认和静态interface方法
 //        可重复的注解
