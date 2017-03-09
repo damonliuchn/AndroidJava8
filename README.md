@@ -46,4 +46,5 @@
 
     Jack:
 
-       Jack (.java --> .jack --> .dex)
+       Jack (.java --> 通过jack --> .dex)
+       aar、jar ->通过jill->.jack->通过jack -->dex
