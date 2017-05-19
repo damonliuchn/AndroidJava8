@@ -20,6 +20,6 @@ public class ExampleUnitTest {
 
     @Test
     public void testNewInterface() throws Exception {
-        TestNewInterface.test();
+        TestTypeAnnotation.test();
     }
 }

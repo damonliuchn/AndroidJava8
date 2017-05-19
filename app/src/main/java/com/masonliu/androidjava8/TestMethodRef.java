@@ -1,7 +1,7 @@
 package com.masonliu.androidjava8;
 
 /**
- * 方法引用 就是为某一个方法设置别名
+ * 方法引用 就是为某一个方法设置别名,形式为  ::
  * 引用静态方法
  * 引用对象方法
  * 引用特定类型方法
@@ -48,24 +48,24 @@ public class TestMethodRef {
         R create(P p1, P2 p2);
     }
 
+    public static class Person {
+        private String name;
+        private int age;
 
-}
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
 
-class Person {
-    private String name;
-    private int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    '}';
+        }
     }
 }
+
+
 

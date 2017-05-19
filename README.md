@@ -17,9 +17,7 @@
 
     Android Gingebread (API 9)及以上:
 
-        Lambda 表达式
-
-        java.util.function 函数式接口
+        Lambda 表达式、java.util.function 函数式接口
 
         方法引用
 
