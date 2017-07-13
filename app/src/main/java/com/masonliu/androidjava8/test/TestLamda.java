@@ -1,4 +1,6 @@
-package com.masonliu.androidjava8;
+package com.masonliu.androidjava8.test;
+
+import android.util.Log;
 
 /**
  * lamda表达式 以简化面向对象结构 为主。
@@ -13,10 +15,10 @@ public class TestLamda {
         setRunnable(new Runnable() {
             @Override
             public void run() {
-                System.out.println("i am not lamda");
+                Log.d("TestLamda","i am not lamda");
             }
         });
-        setRunnable(() -> System.out.println("i am lamda"));
+        setRunnable(() -> Log.d("TestLamda","i am lamda"));
         IMath iMath = (i, j) -> {
             int result = i + j;
             return result;

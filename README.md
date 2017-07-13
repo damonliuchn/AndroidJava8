@@ -1,18 +1,12 @@
 # AndroidJava8
 
+1. Android Studio升级到3.0（canary channel）
 
+2. android gradle plugin  使用3.0.0-alpha6及以上(会自动提示gradle version 是否需要升级)
 
-1. Android Studio升级到2.2（canary channel）
+3. buildToolsVersion 25
 
-2. gradle插件使用2.2.0及以上
-
-3. 启用jack编译器
-
-4. buildToolsVersion 23以及以前的编译工具版本中的jack是不支持java8的
-
-5. Android 版本支持
-
-
+4. Android 版本支持
 
 
     Android Gingebread (API 9)及以上:
@@ -20,6 +14,8 @@
         Lambda 表达式、java.util.function 函数式接口
 
         方法引用
+        
+        类型注解
 
     Android N（API 24）及以上:
 
@@ -35,14 +31,9 @@
 
 
 
+5. 编译变化
 
-6. 编译变化
+    javac (.java --> .class) --> desugar (high class-->low class) --> dx (.class --> .dex)
 
-    javac:
-
-        javac (.java --> .class) --> dx (.class --> .dex)
-
-    Jack:
-
-       Jack (.java --> 通过jack --> .dex)
-       aar、jar ->通过jill->.jack->通过jack -->dex
+    
+https://developer.android.com/studio/preview/features/java8-support.html

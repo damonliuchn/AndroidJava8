@@ -1,4 +1,6 @@
-package com.masonliu.androidjava8;
+package com.masonliu.androidjava8.test;
+
+import android.util.Log;
 
 /**
  * 方法引用 就是为某一个方法设置别名,形式为  ::
@@ -16,7 +18,7 @@ public class TestMethodRef {
         //引用静态方法
         IMessage<Double, String> msg0 = d -> String.valueOf(d);
         IMessage<Double, String> msg1 = String::valueOf;
-        System.out.println(msg1.convert(111.33));
+        Log.d("TestMethodRef",msg1.convert(111.33));
         //引用对象方法
         IMessage2<String> msg2 = () -> "hello".toUpperCase();
         IMessage2<String> msg3 = "hello"::toUpperCase;
